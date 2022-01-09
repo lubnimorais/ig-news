@@ -2,7 +2,8 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "@next/next/no-title-in-document-head": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "import/no-anonymous-default-export": "off"
   }
 
 }

@@ -31,13 +31,11 @@ export default function Post({ posts }: IPostsProps) {
           {
             posts.map(post => (
               <Link key={post.slug} href={`/posts/${post.slug}`}>
-                <a>
-                  <time>{post.updatedAt}</time>
-                  <strong>{post.title}</strong>
-                  <p>
-                    {post.excerpt}
-                  </p>
-                </a>
+                <time>{post.updatedAt}</time>
+                <strong>{post.title}</strong>
+                <p>
+                  {post.excerpt}
+                </p>
               </Link>
             ))
           }
@@ -54,11 +52,11 @@ export const getStaticProps: GetStaticProps = async () => {
     [
       Prismic.Predicates.at('document.type', 'publication')
     ], {
-      fetch: ['publication.title', 'publication.content'],
-      pageSize: 100,
-    }
+    fetch: ['publication.title', 'publication.content'],
+    pageSize: 100,
+  }
   )
-  
+
   const posts = response.results.map(post => {
     return {
       slug: post.uid,
@@ -72,7 +70,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
   })
 
-  
+
   return {
     props: {
       posts,

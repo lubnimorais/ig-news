@@ -4,19 +4,19 @@ import { ActiveLink } from '../ActiveLink';
 import styles from './styles.module.scss';
 
 const Header = () => {
-  
 
-  return(
+
+  return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="ig.news" />
         <nav>
           <ActiveLink activeClassName={styles.active} href='/' >
-            <a>Home</a>
+            <p>Home</p>
           </ActiveLink>
 
           <ActiveLink activeClassName={styles.active} href='/posts'>
-            <a>Posts</a>
+            <p>Posts</p>
           </ActiveLink>
         </nav>
 

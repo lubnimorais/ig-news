@@ -11,7 +11,7 @@ import styles from './home.module.scss';
 interface IHomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
     amountFormatted: string;
   }
 }
@@ -22,7 +22,7 @@ export default function Home({ product }: IHomeProps) {
       <Head>
         <title>Home | ig.news</title>
       </Head>
-      
+
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
@@ -32,7 +32,7 @@ export default function Home({ product }: IHomeProps) {
             <span>for {product.amountFormatted} month</span>
           </p>
 
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
 
         <img src="/images/avatar.svg" alt="Girl coding" />

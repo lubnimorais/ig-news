@@ -8,12 +8,8 @@ import { getStripeJS } from '../../services/stripe-js';
 import styles from './styles.module.scss';
 
 
-interface ISubscripeButtonProps {
-  priceId: string;
-}
-
-const SubscribeButton = ({ priceId }: ISubscripeButtonProps) => {
-  const { data: session} = useSession();
+const SubscribeButton = () => {
+  const { data: session } = useSession();
   const router = useRouter()
 
   const handleSubscribe = useCallback(async () => {

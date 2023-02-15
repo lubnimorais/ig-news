@@ -41,18 +41,18 @@ export default function PostPreview({ post }: IPostPreviewProps) {
           <h1>{post.title}</h1>
           <time>{post.updatedAt}</time>
 
-          <div 
+          <div
             className={`${styles.postContent} ${styles.previewContent}`}
             dangerouslySetInnerHTML={{
               __html: post.content,
-            }} 
+            }}
           />
         </article>
 
         <div className={styles.continueReading}>
           Wanna continue reading?
           <Link href='/'>
-            <a>Subscribe now 🤗</a>
+            Subscribe now 🤗
           </Link>
         </div>
       </main>

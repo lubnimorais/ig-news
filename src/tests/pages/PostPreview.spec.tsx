@@ -10,7 +10,11 @@ import { useRouter } from "next/router";
 jest.mock('../../services/prismic');
 
 jest.mock('next-auth/react')
-jest.mock('next/router');
+jest.mock('next/router', () => ({
+  useRouter: jest.fn().mockReturnValue({
+    push: jest.fn(),
+  }),
+}));
 
 const post = {
   slug: 'my-new-post',
